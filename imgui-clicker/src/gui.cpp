@@ -1,3 +1,5 @@
+// ImGui System by: https://github.com/cazzwastaken
+
 #include "stdafx.hpp"
 
 #include "../imgui/imgui.h"
