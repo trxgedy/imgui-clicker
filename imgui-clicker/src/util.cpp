@@ -24,14 +24,12 @@ auto c_util::pid( std::string_view p_name ) -> DWORD
 }
 
 
-auto c_util::is_foreground_proc( DWORD p_pid ) -> bool
+auto c_util::is_javaw_foreground() -> bool
 {
-	HWND hwnd { GetForegroundWindow( ) }; 
-	DWORD w_pid;
+	HWND hwnd { FindWindowA( "LWJGL", nullptr ) };
+	DWORD w_pid = GetWindowThreadProcessId( hwnd, &w_pid );
 
-	GetWindowThreadProcessId( hwnd, &w_pid );
-
-	if ( w_pid == p_pid )
+	if ( w_pid )
 		return true;
 
 	return false;
