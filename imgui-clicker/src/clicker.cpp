@@ -2,12 +2,15 @@
 
 auto c_clicker::click_thread( ) -> void
 {
-	auto javaw_pid { g_util->pid( "javaw.exe" ) };
-	auto toggle { false };
 
+	HWND hwnd { FindWindowA( "LWJGL", nullptr ) };
+	DWORD w_pid = GetWindowThreadProcessId( hwnd, &w_pid );
+
+	auto toggle { false };
+	
 	while ( true )
 	{
-		if ( g_util->is_foreground_proc( javaw_pid ) )
+		if ( g_util->is_foreground_proc( w_pid ) )
 		{
 			if ( GetAsyncKeyState( g_clicker->bind) )
 			{
