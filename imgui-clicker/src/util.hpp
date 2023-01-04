@@ -10,7 +10,6 @@ public:
 	c_util( ) = default;
 	~c_util( ) = default;
 
-	auto pid( std::string_view p_name ) -> DWORD;
 	auto is_javaw_foreground() -> bool;
 
 };
