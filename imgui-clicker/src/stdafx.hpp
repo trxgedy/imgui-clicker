@@ -11,7 +11,6 @@
 #include <tchar.h>
 
 #include <thread>
-#include <random>
 
 #include "util.hpp"
 #include "gui.h"
